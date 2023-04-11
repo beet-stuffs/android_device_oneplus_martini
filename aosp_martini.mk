@@ -13,6 +13,7 @@ $(call inherit-product, device/oneplus/martini/device.mk)
 
 # Inherit some common PixelOS stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 
 PRODUCT_NAME := aosp_martini
 PRODUCT_DEVICE := martini
