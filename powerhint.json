@@ -164,6 +164,38 @@
       "ResetOnInit": true
     },
     {
+      "Name": "SchedPreferSpread",
+      "Path": "/proc/sys/kernel/sched_prefer_spread",
+      "Values": [
+        "0",
+	"3",
+        "4"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "WaltLowLatTaskThres",
+      "Path": "proc/sys/kernel/walt_low_latency_task_threshold",
+      "Values": [
+        "100",
+        "325"
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": true
+    },
+    {
+
+      "Name": "WaltRtgCfsBoostPrio",
+      "Path": "/proc/sys/kernel/walt_rtg_cfs_boost_prio",
+      "Values": [
+        "99",
+        "119"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "GPUMaxFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
       "Values": [
@@ -361,6 +393,24 @@
     },
     {
       "PowerHint": "INTERACTION",
+      "Node": "SchedPreferSpread",
+      "Duration": 0,
+      "Value": "4"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "WaltLowLatTaskThres",
+      "Duration": 0,
+      "Value": "100"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "WaltRtgCfsBoostPrio",
+      "Duration": 0,
+      "Value": "119"
+    },
+    {
+      "PowerHint": "INTERACTION",
       "Node": "CPUBWHystTriggerCount",
       "Duration": 0,
       "Value": "0"
@@ -424,6 +474,12 @@
       "Node": "CPUBigPlusClusterDownRateLimit",
       "Duration": 0,
       "Value": "5000"
+    },
+    {
+      "PowerHint": "INTERACTIVE",
+      "Node": "SchedPreferSpread",
+      "Duration": 0,
+      "Value": "3"
     },
     {
       "PowerHint": "LAUNCH",
