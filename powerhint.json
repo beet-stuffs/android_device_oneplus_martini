@@ -53,6 +53,8 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
+        "1075200",
+        "1881600",
         "1324800",
         "710400"
       ],
@@ -91,6 +93,7 @@
       "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
+        "1075200",
         "844800"
       ],
       "ResetOnInit": true
@@ -131,68 +134,6 @@
         "1",
         "0"
       ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "SchedBoost",
-      "Path": "/proc/sys/kernel/sched_boost",
-      "Values": [
-        "2",
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "SchedMinTaskUtilForBoost",
-      "Path": "/proc/sys/kernel/sched_min_task_util_for_boost",
-      "Values": [
-        "51",
-        "35"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "SchedMinTaskUtilForColoc",
-      "Path": "/proc/sys/kernel/sched_min_task_util_for_colocation",
-      "Values": [
-        "162",
-        "35"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "SchedPreferSpread",
-      "Path": "/proc/sys/kernel/sched_prefer_spread",
-      "Values": [
-        "0",
-	"3",
-        "4"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "WaltLowLatTaskThres",
-      "Path": "proc/sys/kernel/walt_low_latency_task_threshold",
-      "Values": [
-        "100",
-        "325"
-      ],
-      "DefaultIndex": 1,
-      "ResetOnInit": true
-    },
-    {
-
-      "Name": "WaltRtgCfsBoostPrio",
-      "Path": "/proc/sys/kernel/walt_rtg_cfs_boost_prio",
-      "Values": [
-        "99",
-        "119"
-      ],
-      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -274,6 +215,7 @@
       "Name": "CPUBWMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq",
       "Values": [
+        "15258",
         "12298",
         "9155",
         "2288"
@@ -353,13 +295,19 @@
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "1305600"
+      "Value": "9999999"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
       "Value": "1324800"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "CPUBigPlusClusterMinFreq",
+      "Duration": 0,
+      "Value": "1075200"
     },
     {
       "PowerHint": "INTERACTION",
@@ -372,42 +320,6 @@
       "Node": "UclampTALatency",
       "Duration": 0,
       "Value": "1"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "SchedBoost",
-      "Duration": 0,
-      "Value": "2"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "SchedMinTaskUtilForBoost",
-      "Duration": 0,
-      "Value": "35"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "SchedMinTaskUtilForColoc",
-      "Duration": 0,
-      "Value": "35"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "SchedPreferSpread",
-      "Duration": 0,
-      "Value": "4"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "WaltLowLatTaskThres",
-      "Duration": 0,
-      "Value": "100"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "WaltRtgCfsBoostPrio",
-      "Duration": 0,
-      "Value": "119"
     },
     {
       "PowerHint": "INTERACTION",
@@ -476,12 +388,6 @@
       "Value": "5000"
     },
     {
-      "PowerHint": "INTERACTIVE",
-      "Node": "SchedPreferSpread",
-      "Duration": 0,
-      "Value": "3"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "UclampTAMin",
       "Duration": 3000,
@@ -489,9 +395,15 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "SchedBoost",
+      "Node": "CPULittleClusterMinFreq",
       "Duration": 3000,
-      "Value": "1"
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 3000,
+      "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
@@ -515,7 +427,7 @@
       "PowerHint": "LAUNCH",
       "Node": "CPUBWMinFreq",
       "Duration": 3000,
-      "Value": "12298"
+      "Value": "15258"
     },
     {
       "PowerHint": "LAUNCH",
@@ -539,7 +451,7 @@
       "PowerHint": "LAUNCH",
       "Node": "LLCCBWMinFreq",
       "Duration": 3000,
-      "Value": "6515"
+      "Value": "12191"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
